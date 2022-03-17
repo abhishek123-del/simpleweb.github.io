@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .container{
+      width: 1200px;
+      margin: auto;
+    }
+    h1{
+      text-align: center;
+    }
+    .row{
+      margin-top: 10px;
+      display: flex;
+    }
+    .col1{
+      width: 600px;
+      text-align: center;
+    }
+    .col2{
+      width: 600px;
+    }
+    img{
+      width: 100%;
+    }
+
+    .row2{
+      width: 1200px;
+      height: 100px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .row2 .logo{
+      width: 90px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 1px solid red;
+      margin-left: 12px;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+    }
+    nav ul li{
+      padding: 0 40px;
+    }
+    nav ul li a{
+      text-decoration: none;
+      color: black;
+      font-weight: 500;
+    }
+
+    .harmburger{
+      display: none;
+      cursor: pointer;
+    }
+    .sidebar{
+        width: 200px;
+        display: none;
+        justify-content: space-between;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: black;
+        animation-name: sam;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
+    @keyframes sam{
+      0%{transform: scale(0);}
+      100%{transform: scale(1);}
+    }
+    .sidebar ul{
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+    }
+    .sidebar ul li{
+      padding: 10px 20px;
+    }
+    .sidebar ul li a{
+      text-decoration: none;
+      color: white;
+    }
+    .sidebar .btn-1{
+      color: white;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+
+
+
+
+
+    /* Media ----------------------------------- */
+    @media (max-width:768px){
+      h1{
+        font-size: 15px;
+        color: red;
+      }
+      .container{
+        width: fit-content;
+      }
+      .row{
+        display: block;
+      }
+      .col1{
+        width: 100%;
+      }
+      .col2{
+        width: 100%;
+        margin-top: 10px;
+        text-align: center;
+      }
+      .col2 img{
+        width: 80%;
+      }
+      .col1 p{
+        font-size: 15px;
+      }
+      .row2{
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+      }
+      nav{
+        display: none;
+      }
+      .harmburger{
+        display: block;
+      }
+      
+    }
+
+    @media (max-width:200px) {
+      .sidebar{
+        width: 100vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="row2">
+      <div class="logo">Abhishek</div>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Gallery</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      
+       <div class="harmburger" id="btn">
+           <img src="Images/mobile-nav-icon.png" width="60px" height="60px" alt="">
+       </div>
+
+       <div class="sidebar" id="sidebar">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Contact Us</a></li>
+          </ul>
+          <div class="btn-1" id="btn-1">X</div>
+       </div>
+  </div>
+    <h1>Abhishek Chawariya</h1>
+    <div class="row">
+      <div class="col1">
+        <p>Long ago in Ethiopia a woman named Leeya married a man who had a son.  His wife had died several years before.  Try as Leeya might, she could not seem to spark a connection with the child. 
+
+          She offered the boy food, and he refused to eat.  She spoke softly to him, and he turned away.  She sat next to him, and he would get up and walk away.  After several months of this, Leeya didn’t know what to do.
+          
+          Now in Leeya’s village there was a medicine man, a healer, who lived off in the mountains. When anyone in the village was sick or hurting, a visit to him would do the trick. Most of the time, Leeya felt she could fix her own problems.  But not this time. She needed help!
+          
+          As Leeya came up to the healer’s hut, she saw the door was open. The old doctor said without turning around, "I hear you coming. What’s the problem?"</p>
+      </div>
+      <div class="col2">
+        <img src="Images/kithenback3.jpg" alt="demo Image">
+      </div>
+    </div>
+  </div>
+
+  <!-- javascript  -->
+  <script>
+         var btn = document.getElementById("btn").onclick = function(){
+           var sidebar = document.getElementById("sidebar").style.display = "flex";
+         }
+         var btn1 = document.getElementById("btn-1").onclick = function(){
+            sidebar.style.display = "none";
+         }
+  </script>
+</body>
+</html>
